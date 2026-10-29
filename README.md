@@ -2,56 +2,54 @@
 
 A Visual Studio Code extension for reading public AO3 works in a Webview or in the Output panel.
 
-一个可以在 VS Code 中阅读 AO3 公开作品的扩展，支持普通阅读和 Output 面板阅读模式。
+## Install
 
-## Install / 安装
+Marketplace users only need to install the extension. Node.js, npm, Playwright, and a browser do not need to be installed separately.
 
-Marketplace 用户只需要安装扩展，不需要单独安装 Node.js、npm、Playwright 或浏览器。
-
-从源码运行：
+To run from source:
 
 ```bash
 npm ci
 npm run compile
 ```
 
-然后在 VS Code 中打开本项目并按 `F5`，会启动 Extension Development Host。
+Open this project in VS Code and press `F5` to launch the Extension Development Host.
 
-打包 VSIX：
+To package a VSIX:
 
 ```bash
 npm run package
 ```
 
-## Usage / 使用
+## Usage
 
-1. 打开命令面板：Windows/Linux 使用 `Ctrl+Shift+P`，macOS 使用 `Cmd+Shift+P`。
-2. 运行 `Open AO3 Fanfiction`。
-3. 粘贴 AO3 作品或章节链接，例如：
+1. Open the Command Palette: press `Ctrl+Shift+P` on Windows/Linux or `Cmd+Shift+P` on macOS.
+2. Run `Open AO3 Fanfiction`.
+3. Paste a link to an AO3 work or chapter, for example:
    `https://archiveofourown.org/works/1234567/chapters/2345678`
-4. 选择“在 VSCode 里阅读”或“伪装成终端摸鱼模式”。
+4. Choose **Read in VS Code** or **Pretend to Work in Terminal Mode**.
 
-“终端模式”的内容显示在 **Output / 输出** 面板，不是真正的 Terminal / 终端。
+Content in "Terminal Mode" appears in the **Output** panel, not in the actual terminal.
 
-## Network / 网络与代理
+## Network and Proxy
 
-扩展需要能够访问 `https://archiveofourown.org`。如果你的网络不能直连 AO3，请先配置可用代理，然后在 VS Code 设置中搜索 `http.proxy` 并填入代理地址，例如：
+The extension needs access to `https://archiveofourown.org`. If your network cannot connect to AO3 directly, configure a working proxy, then search for `http.proxy` in VS Code settings and enter the proxy address, for example:
 
 ```text
 http://127.0.0.1:7890
 ```
 
-扩展也支持 `HTTPS_PROXY`、`HTTP_PROXY` 环境变量。修改代理后请执行 `Developer: Reload Window`。
+The extension also supports the `HTTPS_PROXY` and `HTTP_PROXY` environment variables. After changing your proxy settings, run `Developer: Reload Window`.
 
-## Limitations / 限制
+## Limitations
 
-- 支持 `/works/<id>` 和 `/works/<id>/chapters/<id>` 链接。
-- 需要登录才能阅读的作品目前不支持。
-- 如果 AO3 返回 403、5xx 或连接超时，请检查 AO3 状态、网络与代理。
+- Supports `/works/<id>` and `/works/<id>/chapters/<id>` links.
+- Works that require login are not currently supported.
+- If AO3 returns a 403 or 5xx response, or the connection times out, check AO3's status, your network, and your proxy settings.
 
-## Feedback / 联系作者
+## Feedback
 
-欢迎提交 GitHub issue，或联系 `bluetrainswemissed@proton.me`。
+Please submit a GitHub issue or contact `bluetrainswemissed@proton.me`.
 
 ## License
 
